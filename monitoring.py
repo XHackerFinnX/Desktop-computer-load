@@ -7,8 +7,8 @@ class Monitoring:
     @staticmethod
     def get_stats():
         cpu = psutil.cpu_percent()
-        ram = psutil.virtual_memory().percent
-        disk = psutil.disk_usage("/").percent
+        ram = psutil.virtual_memory()
+        disk = psutil.disk_usage("/")
         return cpu, ram, disk
 
     @staticmethod
