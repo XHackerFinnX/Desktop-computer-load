@@ -65,9 +65,11 @@ python main.py
 
 ### Главный экран
 > Отображение текущей загрузки ЦП, ОЗУ и ПЗУ.
+
 ![Главный экран](https://github.com/XHackerFinnX/Desktop-computer-load/blob/main/photo/main_windows.png)
 
 ### Таймер записи
 > Кнопка "Начать запись" переключается на "Остановить" с отображением таймера.
+
 ![Запись данных](https://github.com/XHackerFinnX/Desktop-computer-load/blob/main/photo/record_data.png)
 ---
