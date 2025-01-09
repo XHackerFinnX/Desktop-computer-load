@@ -24,12 +24,12 @@ class MonitoringApp(MonitoringAppUI):
         cpu, ram, disk = Monitoring.get_stats()
 
         self.cpu_label.setText(f"ЦП: {cpu}%")
-        self.ram_label.setText(f"ОЗУ: {ram}%")
-        self.disk_label.setText(f"ПЗУ: {disk}%")
+        self.ram_label.setText(f"ОЗУ: {ram.available // (1024**2)} MB свободно / {ram.total // (1024**2)} MB всего")
+        self.disk_label.setText(f"ПЗУ: {disk.free // (1024**3)} GB свободно / {disk.total // (1024**3)} GB всего")
 
         if self.recording:
             timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-            self.db.insert_record(timestamp, cpu, ram, disk)
+            self.db.insert_record(timestamp, cpu, ram.percent, disk.percent)
             self.timer_label.setText(f"Запись времени: {Monitoring.format_time(self.start_time)}")
 
     def set_update_interval(self):

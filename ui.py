@@ -21,8 +21,8 @@ class MonitoringAppUI(QMainWindow):
         self.setStyleSheet("background-color: #f5f5f5;")
 
         self.cpu_label = QLabel("ЦП: 0%")
-        self.ram_label = QLabel("ОЗУ: 0%")
-        self.disk_label = QLabel("ПЗУ: 0%")
+        self.ram_label = QLabel("ОЗУ: 0 MB свободно / 0 MB всего")
+        self.disk_label = QLabel("ПЗУ: 0 GB свободно / 0 GB всего")
 
         for label in (self.cpu_label, self.ram_label, self.disk_label):
             label.setFont(QFont("Arial", 14))
